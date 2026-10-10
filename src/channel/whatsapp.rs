@@ -119,7 +119,7 @@ mod tests {
         WhatsAppConfig {
             dm_policy: Some("disabled".into()),
             self_chat_mode: Some(false),
-            allow_from: Some(vec!["+1+15551899912".into()]),
+            allow_from: Some(vec!["+15550100199".into()]),
             group_policy: Some("open".into()),
             groups: Some({
                 let mut m = HashMap::new();
@@ -137,7 +137,7 @@ mod tests {
     #[test]
     fn sender_allowed() {
         let plugin = WhatsAppPlugin::new(make_config());
-        assert!(plugin.is_sender_allowed("+1+15551899912"));
+        assert!(plugin.is_sender_allowed("+15550100199"));
         assert!(!plugin.is_sender_allowed("+1999999999"));
     }
 
